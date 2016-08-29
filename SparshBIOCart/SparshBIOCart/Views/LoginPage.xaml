@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SparshBIOCart;assembly=SparshBIOCart"
+             xmlns:bLocal="clr-namespace:SparshBIOCart.Behaviors;assembly=SparshBIOCart"
+             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             BindingContext="{x:Static local:App.LoginViewModel}"
+             x:Class="SparshBIOCart.Views.LoginPage"
+             Title="Login"
+             BackgroundColor="#fff">
+  <StackLayout VerticalOptions="FillAndExpand" Padding="0" >
+    <Image Aspect="AspectFill"
+               HorizontalOptions="FillAndExpand"
+               Source="Assets/logo.png"  Margin="0,0,0,3"/>
+    <Grid BackgroundColor="#7BB926" Padding="0" Margin="-3,-3,0,0">
+      <Grid.RowDefinitions  Padding="0"   >
+        <RowDefinition Height= "38"  />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width= "*"/>
+      </Grid.ColumnDefinitions>
+        <Label Text="MY ACCOUNT"  FontSize="Large"  FontAttributes="Bold"  FontFamily="Thahoma"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Margin="2,2,2,2"    />
+      </Grid>
+      <StackLayout VerticalOptions="FillAndExpand" Padding="50" >
+    <Frame Padding="25">
+      <Label Text="Sparsh Login"  FontSize="30"  Font="Bold,Large" VerticalOptions="Fill"  HorizontalOptions="Center">
+       <Label.TextColor>
+          <OnPlatform x:TypeArguments="Color"
+             iOS="Accent"
+             WinPhone="Accent"
+             Android="#000" />
+        </Label.TextColor>
+      </Label>
+    </Frame>
+    <Label Text="User name"
+      HorizontalOptions="Start" />
+    <Entry Text ="{Binding Username}"
+      Placeholder ="User name goes here"
+      HorizontalOptions="FillAndExpand" BackgroundColor="#eee" >
+
+      <!--<b:Interaction.Behaviors>
+        <b:BehaviorCollection>
+          <bLocal:AnimateSizeBehavior />
+        </b:BehaviorCollection>
+      </b:Interaction.Behaviors>-->
+    </Entry>
+
+    <Label Text="Password"
+      HorizontalOptions="Start" />
+    <Entry Text ="{Binding Password}"
+      Placeholder ="Password goes here"
+      HorizontalOptions="FillAndExpand" BackgroundColor="#eee">
+      <!--<b:Interaction.Behaviors>
+        <b:BehaviorCollection>
+          <bLocal:AnimateSizeBehavior EasingFunction="BounceIn"
+                                      Scale="1.25" />
+        </b:BehaviorCollection>
+      </b:Interaction.Behaviors>-->
+    </Entry>
+        <Frame Padding="25">
+          <Button Text ="Log In"
+          Command="{Binding LoginCommand}"
+          HorizontalOptions="CenterAndExpand"
+          BackgroundColor="#7bb926"  TextColor="#fff"
+          BorderRadius="35"
+          HeightRequest="40"
+          WidthRequest="100">
+          </Button>
+        </Frame>
+  </StackLayout>
+  </StackLayout>
+</ContentPage>
