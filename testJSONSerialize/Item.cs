@@ -9,6 +9,8 @@ namespace testJSONSerialize
 {
    public class Product
     {
+
+
         [JsonProperty("product_cat")]
         public string Category { get; set; }
 
