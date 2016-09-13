@@ -21,13 +21,14 @@
                FontFamily="Thahoma"
                HorizontalOptions="EndAndExpand"
                VerticalOptions="CenterAndExpand"
-               Margin="2,2,2,2"    >
+               Margin="2,2,2,2"      >
           <Label.TextColor>
             <OnPlatform x:TypeArguments="Color"
                iOS="Accent"
                WinPhone="Accent"
                Android="#FFFFFF" />
           </Label.TextColor>
+          
         </Label>
       </Grid>
 
