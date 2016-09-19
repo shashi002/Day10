@@ -14,6 +14,7 @@ namespace SparshBIOCart.Models
         [JsonProperty("product_cat")]
         public string Category { get; set; }
 
+        [JsonProperty("product_description")]
         public string Description { get; set; }
 
 

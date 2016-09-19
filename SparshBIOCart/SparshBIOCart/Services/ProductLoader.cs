@@ -1456,7 +1456,7 @@ namespace SparshBIOCart.Services
             try { 
             RequestParams param = new RequestParams();
 
-            string strJSONDATA = await getProductList(param);
+            string strJSONDATA = await SparshBIOCart(param);
             var itemCollection = JsonConvert.DeserializeObject<ProductList>(strJSONDATA);
                 foreach (var item in itemCollection.Products)
                 {
@@ -1479,11 +1479,11 @@ namespace SparshBIOCart.Services
             if (!string.IsNullOrEmpty(item.Name))
             {
                 item.Name = item.Name.Titleize().Replace(".", string.Empty);
-                item.Description = item.Name.Humanize(LetterCasing.Sentence);
+               // item.Description = String.Format("{0}\n{1}", item.Description, item.Price.ToString()); // item.Name.Humanize(LetterCasing.Sentence);
             }else
             {
                 item.Name = item.Name.Replace(".", string.Empty);
-                item.Description = item.Name.ToString();
+                //item.Description = item.Name.ToString();
             }
         }
 
@@ -1491,9 +1491,9 @@ namespace SparshBIOCart.Services
 
 
 
-        public async Task<string> getProductList(RequestParams param)
+        public async Task<string> SparshBIOCart(RequestParams param)
         {
-            string url = string.Format("http://sparshbiolife.com/webservice/getproducts.php?user_id={0}", 2);
+            string url = string.Format("http://sparshbiolife.com/webservices_new/getproducts.php?user_id={0}", 2);
 
             var client = new System.Net.Http.HttpClient();
             string json = JsonConvert.SerializeObject(param, Formatting.Indented);
@@ -1509,7 +1509,7 @@ namespace SparshBIOCart.Services
             return result;
         }
 
-        //public string getProductList()
+        //public string SparshBIOCart()
         // {
         // Set your Url for your php-file on your webserver.
 

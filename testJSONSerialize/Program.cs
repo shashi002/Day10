@@ -194,7 +194,7 @@ namespace testJSONSerialize
 
         private static void ConvertJSONToObject()
         {
-            string url = "http://sparshbiolife.com/webservice/getproducts.php?user_id=2";
+            string url = "http://sparshbiolife.com/webservices_new/getproducts.php?user_id=2";
             RequestParams param = new RequestParams();
             // Program prg = new Program();
             using (var httpClient = new HttpClient())
@@ -222,7 +222,7 @@ namespace testJSONSerialize
 
         //    return null;
         //}
-        //public  async  Task<string> getProductList(RequestParams param)
+        //public  async  Task<string> SparshBIOCart(RequestParams param)
         //{
         //    string url = "http://sparshbiolife.com/webservice/getproducts.php?user_id=2";
 
